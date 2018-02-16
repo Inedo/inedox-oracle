@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Inedo.BuildMasterExtensions.Oracle.UnitTests</RootNamespace>
     <AssemblyName>OracleUnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -48,25 +48,26 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BuildMaster.Web.Controls, Version=5.1.0.7, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
-      <HintPath>..\packages\Inedo.BuildMaster.SDK.5.1\lib\net45\BuildMaster.Web.Controls.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="BuildMaster.Web.Controls, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMaster.Web.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="BuildMasterCore, Version=5.1.0.7, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
-      <HintPath>..\packages\Inedo.BuildMaster.SDK.5.1\lib\net45\BuildMasterCore.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="BuildMasterCore, Version=6.0.0.45, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.BuildMaster.SDK.6.0.0\lib\net452\BuildMasterCore.dll</HintPath>
     </Reference>
-    <Reference Include="Inedo.Agents.Client, Version=397.1.0.0, Culture=neutral, PublicKeyToken=9de986a2f8db80fc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Inedo.BuildMaster.SDK.5.1\lib\net45\Inedo.Agents.Client.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Inedo.Agents.Client, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=9de986a2f8db80fc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.Agents.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Inedo.ExecutionEngine, Version=33.1.0.0, Culture=neutral, PublicKeyToken=68703f0e52007e75, processorArchitecture=MSIL">
-      <HintPath>..\packages\Inedo.BuildMaster.SDK.5.1\lib\net45\Inedo.ExecutionEngine.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Inedo.ExecutionEngine, Version=64.0.0.0, Culture=neutral, PublicKeyToken=68703f0e52007e75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.ExecutionEngine.dll</HintPath>
     </Reference>
-    <Reference Include="InedoLib, Version=397.1.0.0, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
-      <HintPath>..\packages\Inedo.BuildMaster.SDK.5.1\lib\net45\InedoLib.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Inedo.SDK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=29fae5dec3001603, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Inedo.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="InedoLib, Version=1000.0.0.0, Culture=neutral, PublicKeyToken=112cfb71329714a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.SDK.1.0.4-pre0021\lib\net452\InedoLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inedo.SDK.1.0.4-pre0021\lib\net452\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.24160419\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>

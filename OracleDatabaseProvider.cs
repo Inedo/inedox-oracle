@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Inedo.BuildMaster.Extensibility.DatabaseConnections;
-using Inedo.BuildMaster.Web;
 using Inedo.BuildMasterExtensions.Oracle.Properties;
 using Inedo.Data;
 using Inedo.Diagnostics;
+using Inedo.Web;
 using Oracle.ManagedDataAccess.Client;
 
 namespace Inedo.BuildMasterExtensions.Oracle
@@ -29,7 +29,7 @@ namespace Inedo.BuildMasterExtensions.Oracle
                 return Complete;
 
             var splitQueries = new List<string>(ScriptSplitter.Process(query)).ToArray();
-            this.LogDebug("Split into {0} queries.", splitQueries.Length);
+            this.LogDebug($"Split into {splitQueries.Length} queries.");
             
             using (var conn = new OracleConnection(this.ConnectionString))
             {
@@ -40,7 +40,7 @@ namespace Inedo.BuildMasterExtensions.Oracle
                     for (int i = 0; i < splitQueries.Length; i++)
                     {
                         var splitQuery = splitQueries[i];
-                        this.LogDebug("Executing Query {0}...", i + 1);
+                        this.LogDebug($"Executing Query {i + 1}...");
                         cmd.CommandText = splitQuery.Replace("\r", "");
                         cmd.ExecuteNonQuery();
                     }
