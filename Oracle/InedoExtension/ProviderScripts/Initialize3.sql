@@ -1,0 +1,5 @@
+﻿CREATE SEQUENCE "__BuildMaster_DbSchema_Seq"
+  START WITH 2
+  INCREMENT BY 1
+  NOMAXVALUE
+  NOCACHE
