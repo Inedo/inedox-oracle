@@ -1,6 +1,6 @@
 # inedox-oracle
 
-[![Build status](https://ci.appveyor.com/api/projects/status/tuoxysj135rod89u/branch/master?svg=true)](https://ci.appveyor.com/project/Inedo/inedox-oracle/branch/master)
+[![Build status](https://buildmaster.inedo.com/api/ci-badges/image?API_Key=badges&$ApplicationId=26)](https://buildmaster.inedo.com/api/ci-badges/link?API_Key=badges&$ApplicationId=26)
 
 Database integration for Oracle 9i and later.
 
