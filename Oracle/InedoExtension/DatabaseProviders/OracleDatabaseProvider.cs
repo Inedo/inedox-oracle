@@ -5,19 +5,17 @@ using System.Data;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Inedo.BuildMaster.Extensibility.DatabaseConnections;
 using Inedo.Data;
 using Inedo.Diagnostics;
+using Inedo.Extensibility.DatabaseConnections;
 using Inedo.Extensions.Oracle.Properties;
 using Inedo.Serialization;
-using Inedo.Web;
 using Oracle.ManagedDataAccess.Client;
 
 namespace Inedo.Extensions.Oracle
 {
     [DisplayName("Oracle")]
     [Description("Database provider for Oracle 9i and later.")]
-    [CustomEditor(typeof(OracleDatabaseProviderEditor))]
     [PersistFrom("Inedo.BuildMasterExtensions.Oracle.OracleDatabaseProvider,Oracle")]
     public sealed class OracleDatabaseProvider : DatabaseConnection, IChangeScriptExecuter
     {

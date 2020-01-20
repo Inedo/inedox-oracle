@@ -2,6 +2,9 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Inedo.Extensibility;
+
+[assembly: AppliesTo(InedoProduct.BuildMaster)]
 
 [assembly: AssemblyTitle("Oracle")]
 [assembly: AssemblyDescription("Database integration for Oracle 9i and later.")]
