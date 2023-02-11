@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Inedo.Data;
@@ -15,7 +16,7 @@ using Oracle.ManagedDataAccess.Client;
 namespace Inedo.Extensions.Oracle
 {
     [DisplayName("Oracle")]
-    [Description("Database provider for Oracle 9i and later.")]
+    [Description("Database provider for Oracle 12.x and later.")]
     [PersistFrom("Inedo.BuildMasterExtensions.Oracle.OracleDatabaseProvider,Oracle")]
     public sealed class OracleDatabaseProvider : DatabaseConnection, IChangeScriptExecuter
     {
@@ -25,11 +26,16 @@ namespace Inedo.Extensions.Oracle
 
         public override Task ExecuteQueryAsync(string query, CancellationToken cancellationToken)
         {
+            query = query.TrimEnd('/');
+
             if (string.IsNullOrEmpty(query))
                 return Complete;
 
-            var splitQueries = new List<string>(ScriptSplitter.Process(query)).ToArray();
-            this.LogDebug($"Split into {splitQueries.Length} queries.");
+            var splitQueries = Regex.Split(query, @";\r?\n/\r?\n");
+            if (splitQueries.Length == 0)
+                this.LogDebug($"Script does not have any query delimiters (i.e. \";«newline»/«newline»\").");
+            else
+                this.LogDebug($"Script has query delimiters (i.e. \";«newline»/«newline»\"), and will run as {splitQueries.Length} separate queries.");
             
             using (var conn = new OracleConnection(this.ConnectionString))
             {
