@@ -32,11 +32,11 @@ namespace Inedo.Extensions.Oracle
                 return Complete;
 
             var splitQueries = Regex.Split(query, @";\r?\n/\r?\n");
-            if (splitQueries.Length == 0)
-                this.LogDebug($"Script does not have any query delimiters (i.e. \";«newline»/«newline»\").");
-            else
+            if (splitQueries.Length > 1)
                 this.LogDebug($"Script has query delimiters (i.e. \";«newline»/«newline»\"), and will run as {splitQueries.Length} separate queries.");
-            
+            else
+                this.LogDebug($"Script does not have any query delimiters (i.e. \";«newline»/«newline»\").");
+
             using (var conn = new OracleConnection(this.ConnectionString))
             {
                 conn.Open();
@@ -48,6 +48,9 @@ namespace Inedo.Extensions.Oracle
                         var splitQuery = splitQueries[i];
                         this.LogDebug($"Executing Query {i + 1}...");
                         cmd.CommandText = splitQuery.Replace("\r", "");
+                        if (splitQueries.Length > 1)
+                            cmd.CommandText += ";";
+
                         cmd.ExecuteNonQuery();
                     }
                 }
