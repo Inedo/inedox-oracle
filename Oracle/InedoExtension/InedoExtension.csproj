@@ -3,7 +3,7 @@
     <AssemblyName>Oracle</AssemblyName>
     <RootNamespace>Inedo.Extensions.Oracle</RootNamespace>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>net452;net5.0</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -21,23 +21,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Inedo.SDK" Version="1.12.0">
+    <PackageReference Include="Inedo.SDK" Version="2.0.3">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.100" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProviderScripts\Initialize1.sql" />
     <Content Include="ProviderScripts\Initialize2.sql" />
     <Content Include="ProviderScripts\Initialize3.sql" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'net5.0'">
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.1" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'net452'">
-    <Reference Include="System.Net.Http" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="Oracle.ManagedDataAccess" Version="12.2.1100" />
   </ItemGroup>
 </Project>
