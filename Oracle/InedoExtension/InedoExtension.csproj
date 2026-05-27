@@ -21,10 +21,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Inedo.SDK" Version="4.0.0-ci.7">
+    <PackageReference Include="Inedo.SDK" Version="4.0.0">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.100" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.200" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProviderScripts\Initialize1.sql" />
